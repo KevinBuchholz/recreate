@@ -26,10 +26,10 @@ struct TimeAndSnark: View {
         NavigationStack{
             VStack{
                 Text("Set a time for a friendly reminder to ditch mindless scrolling and embrace productive tasks!")
-//                    .padding()
+                    .padding()
                     .font(.title)
                 Text("(Choose at least one time.)")
-                    .padding()
+//                    .padding()
                 
                 DatePicker("Choose at least one time:", selection: $setInterruptor, displayedComponents: .hourAndMinute)
                     .padding()
@@ -41,7 +41,6 @@ struct TimeAndSnark: View {
                     NotificationManager.instance.requestAuthorization(date: setInterruptor)
                     NotificationManager.instance.scheduleNotification(date: setInterruptor)
                     viewModel.localUserTimeLine.append(setInterruptor)
-                 //   viewModel.firstLaunchOfApp.toggle()
                     // the next print lines can be deleted before finishing
                     print("\(Date())")
                     print("\(setInterruptor.formatted())")
@@ -56,9 +55,21 @@ struct TimeAndSnark: View {
                 .font(.title)
                 .padding()
              
+//                Button("Continue") {
+//                    viewModel.firstLaunchOfApp.toggle()
+//                    viewModel.save()
+//                }
+//                .fixedSize(horizontal: false, vertical: true)
+//                .multilineTextAlignment(.center)
+//                .frame(width: 300, height: 50, alignment: .center)
+//                .font(.title2)
+//                .foregroundColor(.white)
+//                .background(Color.orange)
+//                .containerShape(RoundedRectangle(cornerRadius: 10))
+//        }
+//        .contentShape(RoundedRectangle(cornerRadius: 10))
                 
-                
-                NavigationLink("Continue.", destination: PrimaryView( InterruptorModel: NotificationManager()))
+                NavigationLink("Continue", destination: PrimaryView( InterruptorModel: NotificationManager()))
                     .fixedSize(horizontal: false, vertical: true)
                     .multilineTextAlignment(.center)
                     .frame(width: 300, height: 50, alignment: .center)
@@ -67,6 +78,12 @@ struct TimeAndSnark: View {
                     .background(Color.orange)
                     .containerShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
+                    .simultaneousGesture(TapGesture().onEnded{
+                        viewModel.firstLaunchOfApp.toggle()
+                        viewModel.save()
+                    })
+                    .padding()
+                    
             }
         }
     }

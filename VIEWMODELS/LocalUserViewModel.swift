@@ -13,7 +13,27 @@ import Foundation
 
 @MainActor class LocalUserViewModel: ObservableObject {
     
-    @Published var firstLaunchOfApp : Bool = true
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("firstLaunchOfApp")
+    
+    init() {
+        do {
+            let data = try Data(contentsOf: savePath)
+            firstLaunchOfApp = try JSONDecoder().decode(Bool.self, from: data)
+        } catch {
+            firstLaunchOfApp = true
+        }
+    }
+    
+    func save() {
+        do {
+            let data = try JSONEncoder().encode(firstLaunchOfApp)
+            try data.write(to: savePath, options: [.atomic, .completeFileProtection])
+        } catch {
+            print("Unable to save data.")
+        }
+    }
+    
+    @Published var firstLaunchOfApp : Bool
 
     @Published var localUserTimeLine = [Date]()
     var userLocale = Locale.autoupdatingCurrent
