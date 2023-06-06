@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct recreateApp: App {
+    @StateObject var viewModel = LocalUserViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(LocalUserViewModel())
         }
     }
 }
