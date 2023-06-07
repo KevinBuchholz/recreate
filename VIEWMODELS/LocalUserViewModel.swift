@@ -14,11 +14,12 @@ import Foundation
 @MainActor class LocalUserViewModel: ObservableObject {
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("firstLaunchOfApp")
-    
     init() {
         do {
             let data = try Data(contentsOf: savePath)
             firstLaunchOfApp = try JSONDecoder().decode(Bool.self, from: data)
+            
+    
         } catch {
             firstLaunchOfApp = true
         }
@@ -33,8 +34,20 @@ import Foundation
         }
     }
     
-    @Published var firstLaunchOfApp : Bool
+//    struct UserPreferences : Decodable, Encodable {
+//        var firstLaunchOfApp : Bool
+//        var localUserTimeLine = [Date]()
+//        var outside : Bool
+//        var inside : Bool
+//        var highEnergy : Bool
+//        var lowEnergy : Bool
+//        var stimulating : Bool
+//        var relaxing : Bool
+//    }
+    
+    
 
+    @Published var firstLaunchOfApp : Bool
     @Published var localUserTimeLine = [Date]()
     var userLocale = Locale.autoupdatingCurrent
     var gregorianCalendar = Calendar(identifier: .gregorian)
@@ -94,8 +107,52 @@ import Foundation
     
     func refresh() {
         // gives the user another activity prompt
+        //.filter  
     }
     
     
     
+//}
+
+//extension NotificationManager {
+//    static let instance = NotificationManager()
+    let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+    func requestAuthorization(date: Date) {
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
+            if let error = error {
+                print("Error: \(error)")
+            } else {
+                print("Success")
+                self.scheduleNotification(date: date)
+            }
+        }
+    }
+    
+    func scheduleNotification(date: Date){
+        let content = UNMutableNotificationContent()
+        content.title = "This is the Interruptor Title."
+        content.subtitle = "This is the Interruptor Subtitle."
+        content.sound = .default
+        content.badge = 1
+
+       
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute, .timeZone], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+        
+    }
+    func cancelNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
+    
+    func clearBadge() {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
 }

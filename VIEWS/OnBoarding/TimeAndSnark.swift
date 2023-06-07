@@ -11,7 +11,7 @@ import SwiftUI
 struct TimeAndSnark: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
-    @StateObject var InterruptorModel = NotificationManager()
+    //@StateObject var InterruptorModel = NotificationManager()
     @State private var setInterruptor : Date = Date()
 
     private let dateFormatter: DateFormatter = {
@@ -38,8 +38,8 @@ struct TimeAndSnark: View {
                 
 //                Text("\(setInterruptor, formatter: dateFormatter)")
                 Button("Set Time") {
-                    NotificationManager.instance.requestAuthorization(date: setInterruptor)
-                    NotificationManager.instance.scheduleNotification(date: setInterruptor)
+                    viewModel.requestAuthorization(date: setInterruptor)
+                    viewModel.scheduleNotification(date: setInterruptor)
                     viewModel.localUserTimeLine.append(setInterruptor)
                     // the next print lines can be deleted before finishing
                     print("\(Date())")
@@ -69,7 +69,7 @@ struct TimeAndSnark: View {
 //        }
 //        .contentShape(RoundedRectangle(cornerRadius: 10))
                 
-                NavigationLink("Continue", destination: PrimaryView( InterruptorModel: NotificationManager()))
+                NavigationLink("Continue", destination: PrimaryView())
                     .fixedSize(horizontal: false, vertical: true)
                     .multilineTextAlignment(.center)
                     .frame(width: 300, height: 50, alignment: .center)
@@ -91,6 +91,6 @@ struct TimeAndSnark: View {
 
 struct TimeAndSnark_Previews: PreviewProvider {
     static var previews: some View {
-        TimeAndSnark(InterruptorModel: NotificationManager())
+        TimeAndSnark()
     }
 }

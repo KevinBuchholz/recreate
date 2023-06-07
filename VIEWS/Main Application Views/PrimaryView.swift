@@ -10,7 +10,7 @@ import SwiftUI
 struct PrimaryView: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
-    @ObservedObject var InterruptorModel : NotificationManager
+//    @ObservedObject var InterruptorModel : NotificationManager
 
     var body: some View {
         NavigationStack{
@@ -61,7 +61,7 @@ struct PrimaryView: View {
                 
                 Button("I DID IT!!!") {
                     viewModel.iDidIt()
-                    InterruptorModel.clearBadge()
+                    viewModel.clearBadge()
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)
@@ -97,7 +97,7 @@ struct PrimaryView: View {
 
 struct PrimaryView_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryView(InterruptorModel: NotificationManager())
+        PrimaryView()
             .environmentObject(LocalUserViewModel())
     }
 }
