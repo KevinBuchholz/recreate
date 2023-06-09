@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6176E882A32439000C52037 /* SavedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6176E872A32439000C52037 /* SavedItems.swift */; };
 		D620AC082A2A4AB2006D3044 /* PROGRESS INDICATORS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */; };
 		D620AC0A2A2A59CE006D3044 /* USER.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC092A2A59CE006D3044 /* USER.swift */; };
 		D620AC0E2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6176E872A32439000C52037 /* SavedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItems.swift; sourceTree = "<group>"; };
 		D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PROGRESS INDICATORS.swift"; sourceTree = "<group>"; };
 		D620AC092A2A59CE006D3044 /* USER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USER.swift; sourceTree = "<group>"; };
 		D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatFloaterButtonStyle.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */,
 				D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */,
 				D621B8A82A2FC73E00B85915 /* FileManager.swift */,
+				D6176E872A32439000C52037 /* SavedItems.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				D662D4612A17FFAB00C7E024 /* ACTIVITIES.swift in Sources */,
 				D662D4662A18028E00C7E024 /* InitialView.swift in Sources */,
 				D621B8A92A2FC73E00B85915 /* FileManager.swift in Sources */,
+				D6176E882A32439000C52037 /* SavedItems.swift in Sources */,
 				D662D4342A17FF0500C7E024 /* recreateApp.swift in Sources */,
 				D6AD15712A2D16A0007F1736 /* USER ACTIVITY.swift in Sources */,
 			);

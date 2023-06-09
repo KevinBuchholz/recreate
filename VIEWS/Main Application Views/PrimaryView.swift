@@ -11,30 +11,49 @@ struct PrimaryView: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
 //    @ObservedObject var InterruptorModel : NotificationManager
+    @State var primaryViewActivityName = "Default Name"
+    @State var primaryViewActivityPrompt = "Default Prompt"
+    
+    func giveMeTheRightText() {
+        for userActivity in viewModel.assignedUserActivities {
+            if Date.now > userActivity.date  {
+                primaryViewActivityName = userActivity.name
+                primaryViewActivityPrompt = userActivity.prompt
+            } else {
+                primaryViewActivityName = "This is where we'll remind you what to do!"
+                primaryViewActivityPrompt = "Default"
+            }
+        }
+    }
 
     var body: some View {
         NavigationStack{
             VStack{
-                HStack{
-                    ZStack{
-                        
-                        SocialProgressView(socialProgress: viewModel.socialProgress)
-                            .frame(width: 125, height: 125)
-                        Text("\(viewModel.socialProgress * 100, specifier: "%.0f")")
-                            .font(.largeTitle)
-                            .bold()
-                    }.frame(width: 125, height: 125)
-                        .offset(x: -25)
-                    ZStack{
-                        
-                        RecreateProgressView(recreateProgress: viewModel.recreateProgress)
-                            .frame(width: 125, height: 125)
-                        Text("\(viewModel.recreateProgress * 100, specifier: "%.0f")")
-                            .font(.largeTitle)
-                            .bold()
-                    }.frame(width: 125, height: 125)
-                        .offset(x: 25)
+                Group {
+                    HStack{
+                        ZStack{
+                            
+                            SocialProgressView(socialProgress: viewModel.socialProgress)
+                                .frame(width: 125, height: 125)
+                            Text("\(viewModel.socialProgress * 100, specifier: "%.0f")")
+                                .font(.largeTitle)
+                                .bold()
+                        }.frame(width: 125, height: 125)
+                            .offset(x: -25)
+                        ZStack{
+                            
+                            RecreateProgressView(recreateProgress: viewModel.recreateProgress)
+                                .frame(width: 125, height: 125)
+                            Text("\(viewModel.recreateProgress * 100, specifier: "%.0f")")
+                                .font(.largeTitle)
+                                .bold()
+                        }.frame(width: 125, height: 125)
+                            .offset(x: 25)
+                    }
+                    .padding(100)
+                    
                 }
+                .offset(y: -50)
                 // Here's what needs to happen with this text: on first view tell the user that when their first notification comes there will be a prompt here to do something.
                 // if firstRun = true -> string
                 // any other time there will be the prompt for an action:
@@ -43,11 +62,19 @@ struct PrimaryView: View {
                 // the array can be sorted by score to return the most popular activities for the user
                 
                     
-//                Text("\(viewModel.randomActivity.self.name )")
-                Text("Here is where we'll tell you what to do!")
+        Group {
+                    Text("\(primaryViewActivityName)")
                         .font(.system(size: 50))
                         .frame(width: 300)
-                        .padding(50)
+                    
+                    
+                    Text("\(primaryViewActivityPrompt)")
+                        .font(.largeTitle)
+                        .frame(width: 300)
+                    
+        }
+        
+        .offset(y: -100)
                 
                 
                 Button("Give me something else.") {
@@ -86,11 +113,14 @@ struct PrimaryView: View {
                 }
                 
                 Button("Random Activity") {
-                    viewModel.generateRandomActivity()
+               //     viewModel.generateRandomActivity()
                 }
                 
                 NavigationLink("User Preferences", destination: UserPreferencesView())
             }
+        }
+        .onAppear {
+            giveMeTheRightText()
         }
     }
 }
