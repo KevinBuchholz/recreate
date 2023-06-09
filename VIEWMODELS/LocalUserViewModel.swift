@@ -111,8 +111,8 @@ import Foundation
     
     // The user needs to say that they did the action.
     func iDidIt() {
-        recreateProgress += 0.2
-        socialProgress -= 0.2
+        recreateProgress += 0.25
+        socialProgress -= 0.25
         // dismiss badge and delivered notifications
         // add time to user progress
         // subtract time from socialmedia time

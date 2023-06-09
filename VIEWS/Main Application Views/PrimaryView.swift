@@ -34,19 +34,26 @@ struct PrimaryView: View {
                         ZStack{
                             
                             SocialProgressView(socialProgress: viewModel.socialProgress)
-                                .frame(width: 125, height: 125)
-                            Text("\(viewModel.socialProgress * 100, specifier: "%.0f")")
-                                .font(.largeTitle)
-                                .bold()
-                        }.frame(width: 125, height: 125)
-                            .offset(x: -25)
+                                .frame(width: 150, height: 150)
+                            VStack {
+                                Text("\(viewModel.socialProgress * 100, specifier: "%.0f") %")
+                                    .font(.largeTitle)
+                                    .bold()
+                                Text("Social Media")
+                            }
+                        }
+                        .frame(width: 125, height: 125)
+                        .offset(x: -25)
                         ZStack{
                             
                             RecreateProgressView(recreateProgress: viewModel.recreateProgress)
-                                .frame(width: 125, height: 125)
-                            Text("\(viewModel.recreateProgress * 100, specifier: "%.0f")")
-                                .font(.largeTitle)
-                                .bold()
+                                .frame(width: 150, height: 150)
+                            VStack{
+                                Text("\(viewModel.recreateProgress * 100, specifier: "%.0f") %")
+                                    .font(.largeTitle)
+                                    .bold()
+                                Text("Recreate")
+                            }
                         }.frame(width: 125, height: 125)
                             .offset(x: 25)
                     }
