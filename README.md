@@ -1,10 +1,10 @@
 # recreate
-Recreate App from ADA final project.
+Recreate App from Apple Developer Academy final project.
 This is an app that is intended to help people change their habits around social media.
 
 ToDo:
 Prior to test flight:
-ContentView needs to be updated with the proper UserActivity name and prompt at the appropriate time. 
+ContentView needs to be updated with the proper UserActivity name and prompt at the appropriate time. \n
 A picker needs to be added to TimeAndSnark to allow the user to set the amount of time they spend on social media per day.
 The progress gauges need to be updated to reflect the user's daily social media time and the amount of time they do suggested activities.
 A function needs to be written to reset the social media and recreate time every day. 
