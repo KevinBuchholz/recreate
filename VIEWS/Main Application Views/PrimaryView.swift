@@ -74,11 +74,9 @@ struct PrimaryView: View {
                         .font(.system(size: 50))
                         .frame(width: 300)
                     
-                    
                     Text("\(primaryViewActivityPrompt)")
                         .font(.largeTitle)
                         .frame(width: 300)
-                    
         }
         
         .offset(y: -100)
