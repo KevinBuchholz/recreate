@@ -14,6 +14,7 @@ struct TimeAndSnark: View {
     //@StateObject var InterruptorModel = NotificationManager()
     @State private var setInterruptor : Date = Date()
 //    @State var hours : Int = 1
+ 
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -39,7 +40,7 @@ struct TimeAndSnark: View {
 //                .padding()
 //                .pickerStyle(.wheel)
                 
-                Text("Set a time for a reminder to ditch mindless scrolling and embraceproductive tasks!")
+                Text("Set a time for a reminder to ditch mindless scrolling and embrace productive tasks!")
 //                    .padding()
                     .font(.title3)
                     .multilineTextAlignment(.center)
@@ -63,18 +64,12 @@ struct TimeAndSnark: View {
                             do {
                                 try await viewModel.scheduleCustomNotification(date: setInterruptor)
                                 viewModel.localUserTimeLine.append(setInterruptor)
+                                
                             } catch {
                                 print(error.localizedDescription)
                             }
                         }
                     }
-                    // the next print lines can be deleted before finishing
-//                    print("\(Date())")
-//                    print("\(setInterruptor.formatted())")
-//                    print("The time line is: \(viewModel.localUserTimeLine)")
-//                    print("First Launch is: \(viewModel.firstLaunchOfApp)")
-//                    print("User preferences: Outside = \(viewModel.outside), Inside = \(viewModel.inside), High Energy = \(viewModel.highEnergy), Low Energy = \(viewModel.lowEnergy), Relaxing = \(viewModel.relaxing), Stimulating = \(viewModel.stimulating)")
-                    
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.orange)

@@ -125,7 +125,12 @@ struct PrimaryView: View {
             }
         }
         .onAppear {
-            giveMeTheRightText()
+            //Load [assignedUserActivites] from disk
+            if case viewModel.assignedUserActivities = viewModel.loadArrayFromStorage() {
+                giveMeTheRightText()
+            } else {
+                print("Failed to load array.")
+            }
         }
     }
 }

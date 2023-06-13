@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6176E882A32439000C52037 /* SavedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6176E872A32439000C52037 /* SavedItems.swift */; };
 		D620AC082A2A4AB2006D3044 /* PROGRESS INDICATORS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */; };
-		D620AC0A2A2A59CE006D3044 /* USER.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC092A2A59CE006D3044 /* USER.swift */; };
-		D620AC0E2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */; };
 		D620AC102A2C03D2006D3044 /* Activities CSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */; };
 		D621B8A92A2FC73E00B85915 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D621B8A82A2FC73E00B85915 /* FileManager.swift */; };
 		D662D4342A17FF0500C7E024 /* recreateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4332A17FF0500C7E024 /* recreateApp.swift */; };
@@ -21,7 +18,6 @@
 		D662D44F2A17FF0600C7E024 /* recreateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D44E2A17FF0600C7E024 /* recreateUITests.swift */; };
 		D662D4512A17FF0600C7E024 /* recreateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4502A17FF0600C7E024 /* recreateUITestsLaunchTests.swift */; };
 		D662D4612A17FFAB00C7E024 /* ACTIVITIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4602A17FFAB00C7E024 /* ACTIVITIES.swift */; };
-		D662D4632A18004600C7E024 /* INTERRUPTORS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4622A18004600C7E024 /* INTERRUPTORS.swift */; };
 		D662D4662A18028E00C7E024 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4652A18028E00C7E024 /* InitialView.swift */; };
 		D662D4682A1802E800C7E024 /* UserDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4672A1802E800C7E024 /* UserDefiner.swift */; };
 		D662D46A2A18030E00C7E024 /* TimeAndSnark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4692A18030E00C7E024 /* TimeAndSnark.swift */; };
@@ -32,6 +28,7 @@
 		D662D4772A1D488E00C7E024 /* INTERRUPTOR MODEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4762A1D488E00C7E024 /* INTERRUPTOR MODEL.swift */; };
 		D6AD156F2A2D0321007F1736 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD156E2A2D0321007F1736 /* UserActivities.swift */; };
 		D6AD15712A2D16A0007F1736 /* USER ACTIVITY.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD15702A2D16A0007F1736 /* USER ACTIVITY.swift */; };
+		D6B9473F2A37B7CE00DF484E /* DirectoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B9473E2A37B7CE00DF484E /* DirectoryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D6176E872A32439000C52037 /* SavedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItems.swift; sourceTree = "<group>"; };
 		D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PROGRESS INDICATORS.swift"; sourceTree = "<group>"; };
-		D620AC092A2A59CE006D3044 /* USER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USER.swift; sourceTree = "<group>"; };
-		D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatFloaterButtonStyle.swift; sourceTree = "<group>"; };
 		D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Activities CSV.csv"; sourceTree = "<group>"; };
 		D621B8A82A2FC73E00B85915 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		D662D4302A17FF0500C7E024 /* recreate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recreate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +63,6 @@
 		D662D44E2A17FF0600C7E024 /* recreateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recreateUITests.swift; sourceTree = "<group>"; };
 		D662D4502A17FF0600C7E024 /* recreateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recreateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D662D4602A17FFAB00C7E024 /* ACTIVITIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACTIVITIES.swift; sourceTree = "<group>"; };
-		D662D4622A18004600C7E024 /* INTERRUPTORS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INTERRUPTORS.swift; sourceTree = "<group>"; };
 		D662D4652A18028E00C7E024 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		D662D4672A1802E800C7E024 /* UserDefiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefiner.swift; sourceTree = "<group>"; };
 		D662D4692A18030E00C7E024 /* TimeAndSnark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndSnark.swift; sourceTree = "<group>"; };
@@ -80,6 +73,7 @@
 		D662D4762A1D488E00C7E024 /* INTERRUPTOR MODEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "INTERRUPTOR MODEL.swift"; sourceTree = "<group>"; };
 		D6AD156E2A2D0321007F1736 /* UserActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivities.swift; sourceTree = "<group>"; };
 		D6AD15702A2D16A0007F1736 /* USER ACTIVITY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "USER ACTIVITY.swift"; sourceTree = "<group>"; };
+		D6B9473E2A37B7CE00DF484E /* DirectoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,16 +164,13 @@
 		D662D45D2A17FF2900C7E024 /* MODELS */ = {
 			isa = PBXGroup;
 			children = (
-				D620AC092A2A59CE006D3044 /* USER.swift */,
 				D662D4602A17FFAB00C7E024 /* ACTIVITIES.swift */,
 				D6AD15702A2D16A0007F1736 /* USER ACTIVITY.swift */,
-				D662D4622A18004600C7E024 /* INTERRUPTORS.swift */,
 				D662D4742A18100700C7E024 /* Enums.swift */,
 				D662D4762A1D488E00C7E024 /* INTERRUPTOR MODEL.swift */,
 				D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */,
-				D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */,
 				D621B8A82A2FC73E00B85915 /* FileManager.swift */,
-				D6176E872A32439000C52037 /* SavedItems.swift */,
+				D6B9473E2A37B7CE00DF484E /* DirectoryService.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -354,21 +345,18 @@
 			files = (
 				D662D4772A1D488E00C7E024 /* INTERRUPTOR MODEL.swift in Sources */,
 				D662D46A2A18030E00C7E024 /* TimeAndSnark.swift in Sources */,
-				D620AC0A2A2A59CE006D3044 /* USER.swift in Sources */,
+				D6B9473F2A37B7CE00DF484E /* DirectoryService.swift in Sources */,
 				D6AD156F2A2D0321007F1736 /* UserActivities.swift in Sources */,
 				D662D4752A18100700C7E024 /* Enums.swift in Sources */,
 				D662D46F2A18038000C7E024 /* UserPreferencesView.swift in Sources */,
-				D620AC0E2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift in Sources */,
 				D662D4732A18054800C7E024 /* LocalUserViewModel.swift in Sources */,
 				D620AC082A2A4AB2006D3044 /* PROGRESS INDICATORS.swift in Sources */,
-				D662D4632A18004600C7E024 /* INTERRUPTORS.swift in Sources */,
 				D662D4362A17FF0500C7E024 /* ContentView.swift in Sources */,
 				D662D46C2A18034100C7E024 /* PrimaryView.swift in Sources */,
 				D662D4682A1802E800C7E024 /* UserDefiner.swift in Sources */,
 				D662D4612A17FFAB00C7E024 /* ACTIVITIES.swift in Sources */,
 				D662D4662A18028E00C7E024 /* InitialView.swift in Sources */,
 				D621B8A92A2FC73E00B85915 /* FileManager.swift in Sources */,
-				D6176E882A32439000C52037 /* SavedItems.swift in Sources */,
 				D662D4342A17FF0500C7E024 /* recreateApp.swift in Sources */,
 				D6AD15712A2D16A0007F1736 /* USER ACTIVITY.swift in Sources */,
 			);

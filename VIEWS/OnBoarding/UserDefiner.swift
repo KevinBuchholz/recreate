@@ -127,6 +127,7 @@ struct UserDefiner: View {
                         .padding()
                         .simultaneousGesture(TapGesture().onEnded{
                             viewModel.userActivitiesSort()
+                            DirectoryService.writeModelToDisk(viewModel.userActivities)
                             print("\(viewModel.userActivities)")
                         })
                         .padding()
