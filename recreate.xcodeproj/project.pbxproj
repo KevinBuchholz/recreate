@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6176E882A32439000C52037 /* SavedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6176E872A32439000C52037 /* SavedItems.swift */; };
 		D620AC082A2A4AB2006D3044 /* PROGRESS INDICATORS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */; };
 		D620AC0A2A2A59CE006D3044 /* USER.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC092A2A59CE006D3044 /* USER.swift */; };
 		D620AC0E2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */; };
 		D620AC102A2C03D2006D3044 /* Activities CSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */; };
+		D621B8A92A2FC73E00B85915 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D621B8A82A2FC73E00B85915 /* FileManager.swift */; };
 		D662D4342A17FF0500C7E024 /* recreateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4332A17FF0500C7E024 /* recreateApp.swift */; };
 		D662D4362A17FF0500C7E024 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D662D4352A17FF0500C7E024 /* ContentView.swift */; };
 		D662D4382A17FF0600C7E024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D662D4372A17FF0600C7E024 /* Assets.xcassets */; };
@@ -50,10 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6176E872A32439000C52037 /* SavedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItems.swift; sourceTree = "<group>"; };
 		D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PROGRESS INDICATORS.swift"; sourceTree = "<group>"; };
 		D620AC092A2A59CE006D3044 /* USER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USER.swift; sourceTree = "<group>"; };
 		D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatFloaterButtonStyle.swift; sourceTree = "<group>"; };
 		D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Activities CSV.csv"; sourceTree = "<group>"; };
+		D621B8A82A2FC73E00B85915 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		D662D4302A17FF0500C7E024 /* recreate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recreate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D662D4332A17FF0500C7E024 /* recreateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recreateApp.swift; sourceTree = "<group>"; };
 		D662D4352A17FF0500C7E024 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				D662D4762A1D488E00C7E024 /* INTERRUPTOR MODEL.swift */,
 				D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */,
 				D620AC0D2A2AD1AF006D3044 /* BoatFloaterButtonStyle.swift */,
+				D621B8A82A2FC73E00B85915 /* FileManager.swift */,
+				D6176E872A32439000C52037 /* SavedItems.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -361,6 +367,8 @@
 				D662D4682A1802E800C7E024 /* UserDefiner.swift in Sources */,
 				D662D4612A17FFAB00C7E024 /* ACTIVITIES.swift in Sources */,
 				D662D4662A18028E00C7E024 /* InitialView.swift in Sources */,
+				D621B8A92A2FC73E00B85915 /* FileManager.swift in Sources */,
+				D6176E882A32439000C52037 /* SavedItems.swift in Sources */,
 				D662D4342A17FF0500C7E024 /* recreateApp.swift in Sources */,
 				D6AD15712A2D16A0007F1736 /* USER ACTIVITY.swift in Sources */,
 			);

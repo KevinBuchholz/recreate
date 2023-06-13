@@ -18,7 +18,7 @@ struct ContentView: View {
                 InitialView()
 
             }else if viewModel.firstLaunchOfApp == false {
-                PrimaryView(InterruptorModel: NotificationManager())
+                PrimaryView()
             }
         }
        

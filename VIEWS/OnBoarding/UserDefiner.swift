@@ -140,5 +140,6 @@ struct UserDefiner: View {
 struct UserDefiner_Previews: PreviewProvider {
     static var previews: some View {
         UserDefiner()
+            .environmentObject(LocalUserViewModel())
     }
 }
