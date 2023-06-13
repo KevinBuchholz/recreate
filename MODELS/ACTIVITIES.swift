@@ -18,6 +18,7 @@ struct Activity: Identifiable, Codable, Hashable {
     var lowEnergy : String = ""
     var relaxing : String = ""
     var stimulating : String = ""
+//    var date : Date?
     var id = UUID()
     
     init(raw: [String]) {

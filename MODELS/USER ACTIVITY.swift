@@ -9,31 +9,18 @@ import Foundation
 
 struct UserActivity: Identifiable, Codable, Hashable {
 
-    var name : String = ""
-    var prompt : String = ""
-    var interruptorTitle : String = ""
-    var interruptorSubTitle: String = ""
-    var outdoors : String = ""
-    var indoors : String = ""
-    var highEnergy : String = ""
-    var lowEnergy : String = ""
-    var relaxing : String = ""
-    var stimulating : String = ""
+    var activity : Activity
+    var date : Date
     var id = UUID()
-    
-    init(raw: [String]) {
-        name = raw[0]
-        prompt = raw[1]
-        interruptorTitle = raw[2]
-        interruptorSubTitle = raw[3]
-        outdoors = raw[4]
-        indoors = raw[5]
-        highEnergy = raw[6]
-        lowEnergy = raw[7]
-        relaxing = raw[8]
-        stimulating = raw[9]
+    var name: String {
+        activity.name
     }
-}
+    var prompt: String {
+        activity.prompt
+    }
+
+    }
+
 
 //func stringToStruct(from userActivity : String) -> [UserActivity] {
 //    var stringToStruct = [UserActivity]()
