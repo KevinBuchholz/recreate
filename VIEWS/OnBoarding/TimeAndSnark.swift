@@ -39,7 +39,7 @@ struct TimeAndSnark: View {
 //                .padding()
 //                .pickerStyle(.wheel)
                 
-                Text("Set a time for a reminder to ditch mindless scrolling and embraceproductive tasks!")
+                Text("Set a time for a reminder to ditch mindless scrolling and embrace productive tasks!")
 //                    .padding()
                     .font(.title3)
                     .multilineTextAlignment(.center)
@@ -68,13 +68,6 @@ struct TimeAndSnark: View {
                             }
                         }
                     }
-                    // the next print lines can be deleted before finishing
-//                    print("\(Date())")
-//                    print("\(setInterruptor.formatted())")
-//                    print("The time line is: \(viewModel.localUserTimeLine)")
-//                    print("First Launch is: \(viewModel.firstLaunchOfApp)")
-//                    print("User preferences: Outside = \(viewModel.outside), Inside = \(viewModel.inside), High Energy = \(viewModel.highEnergy), Low Energy = \(viewModel.lowEnergy), Relaxing = \(viewModel.relaxing), Stimulating = \(viewModel.stimulating)")
-                    
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.orange)
@@ -99,14 +92,16 @@ struct TimeAndSnark: View {
 //                        print("\(hours)")
                     })
                     .padding()
-                    
             }
         }
+        .navigationBarTitle("")
+        .toolbar(.hidden)
     }
 }
 
 struct TimeAndSnark_Previews: PreviewProvider {
     static var previews: some View {
         TimeAndSnark()
+            .environmentObject(LocalUserViewModel())
     }
 }
