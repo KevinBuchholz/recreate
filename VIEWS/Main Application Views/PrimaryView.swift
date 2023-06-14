@@ -81,7 +81,7 @@ struct PrimaryView: View {
         
         .offset(y: -100)
                 
-                
+                // Doesn't do anything yet.
                 Button("Give me something else.") {
                     viewModel.refresh()
                 }
@@ -105,23 +105,25 @@ struct PrimaryView: View {
                 .font(.title)
                 .padding()
                 
-                Button("Print") {
-                    print("\(viewModel.localUserTimeLine)")
-                    print("First Launch is: \(viewModel.firstLaunchOfApp)")
-                    print("User preferences: Outside = \(viewModel.outside), Inside = \(viewModel.inside), High Energy = \(viewModel.highEnergy), Low Energy = \(viewModel.lowEnergy), Relaxing = \(viewModel.relaxing), Stimulating = \(viewModel.stimulating)")
-                    print("\(viewModel.userActivities)")
-                }
+                //Debugging print stuff.
+                
+//                Button("Print") {
+//                    print("\(viewModel.localUserTimeLine)")
+//                    print("First Launch is: \(viewModel.firstLaunchOfApp)")
+//                    print("User preferences: Outside = \(viewModel.outside), Inside = \(viewModel.inside), High Energy = \(viewModel.highEnergy), Low Energy = \(viewModel.lowEnergy), Relaxing = \(viewModel.relaxing), Stimulating = \(viewModel.stimulating)")
+//                    print("\(viewModel.userActivities)")
+//                }
 
-                Button("Reset") {
-                    viewModel.socialProgress = 1.0
-                    viewModel.recreateProgress = 0.0
-                }
+//                Button("Reset") {
+//                    viewModel.socialProgress = 1.0
+//                    viewModel.recreateProgress = 0.0
+//                }
+//
+//                Button("Random Activity") {
+//               //     viewModel.generateRandomActivity()
+//                }
                 
-                Button("Random Activity") {
-               //     viewModel.generateRandomActivity()
-                }
-                
-                NavigationLink("User Preferences", destination: UserPreferencesView())
+//                NavigationLink("User Preferences", destination: UserPreferencesView())
             }
         }
         .onAppear {
