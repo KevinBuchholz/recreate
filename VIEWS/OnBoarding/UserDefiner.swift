@@ -135,6 +135,8 @@ struct UserDefiner: View {
                 .padding()
             }
         }
+        .navigationBarTitle("Navigation Bar")
+        .toolbar(.hidden)
     }
 }
 

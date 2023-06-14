@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D61739152A3A41BA001DA3F5 /* Activities CSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = D61739142A3A41BA001DA3F5 /* Activities CSV.csv */; };
+		D6176E882A32439000C52037 /* SavedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6176E872A32439000C52037 /* SavedItems.swift */; };
 		D620AC082A2A4AB2006D3044 /* PROGRESS INDICATORS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */; };
 		D620AC102A2C03D2006D3044 /* Activities CSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */; };
 		D621B8A92A2FC73E00B85915 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D621B8A82A2FC73E00B85915 /* FileManager.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D61739142A3A41BA001DA3F5 /* Activities CSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Activities CSV.csv"; sourceTree = "<group>"; };
+		D6176E872A32439000C52037 /* SavedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItems.swift; sourceTree = "<group>"; };
 		D620AC072A2A4AB2006D3044 /* PROGRESS INDICATORS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PROGRESS INDICATORS.swift"; sourceTree = "<group>"; };
 		D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Activities CSV.csv"; sourceTree = "<group>"; };
 		D621B8A82A2FC73E00B85915 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
@@ -129,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				D662D4332A17FF0500C7E024 /* recreateApp.swift */,
+				D61739142A3A41BA001DA3F5 /* Activities CSV.csv */,
 				D662D4372A17FF0600C7E024 /* Assets.xcassets */,
-				D620AC0F2A2C03D2006D3044 /* Activities CSV.csv */,
 				D662D4392A17FF0600C7E024 /* Preview Content */,
 			);
 			path = recreate;
@@ -316,7 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D620AC102A2C03D2006D3044 /* Activities CSV.csv in Resources */,
+				D61739152A3A41BA001DA3F5 /* Activities CSV.csv in Resources */,
 				D662D43B2A17FF0600C7E024 /* Preview Assets.xcassets in Resources */,
 				D662D4382A17FF0600C7E024 /* Assets.xcassets in Resources */,
 			);
@@ -520,16 +524,19 @@
 				DEVELOPMENT_TEAM = 5Q9K7U8YKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Recreate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinb.recreate.recreate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -549,11 +556,14 @@
 				DEVELOPMENT_TEAM = 5Q9K7U8YKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Recreate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

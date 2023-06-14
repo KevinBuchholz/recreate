@@ -94,14 +94,16 @@ struct TimeAndSnark: View {
 //                        print("\(hours)")
                     })
                     .padding()
-                    
             }
         }
+        .navigationBarTitle("")
+        .toolbar(.hidden)
     }
 }
 
 struct TimeAndSnark_Previews: PreviewProvider {
     static var previews: some View {
         TimeAndSnark()
+            .environmentObject(LocalUserViewModel())
     }
 }
