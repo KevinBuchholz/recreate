@@ -10,9 +10,9 @@ import SwiftUI
 struct PrimaryView: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
-//    @ObservedObject var InterruptorModel : NotificationManager
-    @State var primaryViewActivityName = "Default Name"
-    @State var primaryViewActivityPrompt = "Default Prompt"
+
+    @State var primaryViewActivityName = "This is where we'll tell you what to do!"
+    @State var primaryViewActivityPrompt = ""
     
     func giveMeTheRightText() {
         for userActivity in viewModel.assignedUserActivities {
@@ -20,8 +20,8 @@ struct PrimaryView: View {
                 primaryViewActivityName = userActivity.name
                 primaryViewActivityPrompt = userActivity.prompt
             } else {
-                primaryViewActivityName = "This is where we'll remind you what to do!"
-                primaryViewActivityPrompt = "Default"
+                primaryViewActivityName = "This is where we'll tell you what to do!"
+                primaryViewActivityPrompt = ""
             }
         }
     }
@@ -29,6 +29,7 @@ struct PrimaryView: View {
     var body: some View {
         NavigationStack{
             VStack{
+                Spacer(minLength: 50)
                 Group {
                     HStack{
                         ZStack{
@@ -60,7 +61,7 @@ struct PrimaryView: View {
                     .padding(100)
                     
                 }
-                .offset(y: -50)
+                .offset(y: -100)
                 // Here's what needs to happen with this text: on first view tell the user that when their first notification comes there will be a prompt here to do something.
                 // if firstRun = true -> string
                 // any other time there will be the prompt for an action:
@@ -68,61 +69,65 @@ struct PrimaryView: View {
                 // if no activities have a score the user gets a random activity from userActivities
                 // the array can be sorted by score to return the most popular activities for the user
                 
-                    
+        
         Group {
                     Text("\(primaryViewActivityName)")
                         .font(.system(size: 50))
                         .frame(width: 300)
+//                        .padding(16)
+                            .frame(
+                                minWidth: 0,
+                                maxWidth: .infinity,
+                                minHeight: 0,
+                                maxHeight: .infinity,
+                                alignment: .top
+                            )
+                            .fixedSize(horizontal: false, vertical: true)
                     
                     Text("\(primaryViewActivityPrompt)")
                         .font(.largeTitle)
                         .frame(width: 300)
+//                        .padding(16)
+                            .frame(
+                                minWidth: 0,
+                                maxWidth: .infinity,
+                                minHeight: 0,
+                                maxHeight: .infinity,
+                                alignment: .top
+                            )
+                            .fixedSize(horizontal: false, vertical: true)
         }
         
         .offset(y: -100)
-                
-                // Doesn't do anything yet.
-                Button("Give me something else.") {
-                    viewModel.refresh()
+                Group{
+                    // Doesn't do anything yet.
+                    Button("Give me something else.") {
+                        viewModel.refresh()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.teal)
+                    .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .font(.title2)
+                    .padding()
+                    
+                    Button("I DID IT!!!") {
+                        viewModel.iDidIt()
+                        viewModel.clearBadge()
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 300, height: 50, alignment: .center)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .background(Color.orange)
+                    .containerShape(RoundedRectangle(cornerRadius: 10))
+                    .font(.title)
+                    .padding()
+                    
+                    
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.teal)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
-                .font(.title2)
-                .padding()
-                
-                Button("I DID IT!!!") {
-                    viewModel.iDidIt()
-                    viewModel.clearBadge()
-                }
-                .fixedSize(horizontal: false, vertical: true)
-                .multilineTextAlignment(.center)
-                .frame(width: 300, height: 50, alignment: .center)
-                .font(.title2)
-                .foregroundColor(.white)
-                .background(Color.orange)
-                .containerShape(RoundedRectangle(cornerRadius: 10))
-                .font(.title)
-                .padding()
-                
-                //Debugging print stuff.
-                
-//                Button("Print") {
-//                    print("\(viewModel.localUserTimeLine)")
-//                    print("First Launch is: \(viewModel.firstLaunchOfApp)")
-//                    print("User preferences: Outside = \(viewModel.outside), Inside = \(viewModel.inside), High Energy = \(viewModel.highEnergy), Low Energy = \(viewModel.lowEnergy), Relaxing = \(viewModel.relaxing), Stimulating = \(viewModel.stimulating)")
-//                    print("\(viewModel.userActivities)")
-//                }
+                .offset(y: -50)
 
-//                Button("Reset") {
-//                    viewModel.socialProgress = 1.0
-//                    viewModel.recreateProgress = 0.0
-//                }
-//
-//                Button("Random Activity") {
-//               //     viewModel.generateRandomActivity()
-//                }
-                
 //                NavigationLink("User Preferences", destination: UserPreferencesView())
             }
         }
