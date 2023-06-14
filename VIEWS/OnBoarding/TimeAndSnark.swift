@@ -39,7 +39,7 @@ struct TimeAndSnark: View {
 //                .padding()
 //                .pickerStyle(.wheel)
                 
-                Text("Set a time for a reminder to ditch mindless scrolling and embraceproductive tasks!")
+                Text("Set a time for a reminder to ditch mindless scrolling and embrace productive tasks!")
 //                    .padding()
                     .font(.title3)
                     .multilineTextAlignment(.center)
