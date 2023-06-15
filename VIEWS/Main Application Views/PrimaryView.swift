@@ -11,12 +11,12 @@ struct PrimaryView: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
     @Environment(\.scenePhase) var scenePhase: ScenePhase
-    @State var primaryViewActivityName = "This is where we'll tell you what to do!" {
+    @State var primaryViewActivityName = "Go Skateboarding" {
         didSet {
             print(primaryViewActivityName)
         }
     }
-    @State var primaryViewActivityPrompt = ""
+    @State var primaryViewActivityPrompt = "Tony Hawk still skates at 55, what's your excuse? How much can I fit in here without fucking up my UI. This seems like quite a lot!!! Can I write a whole goddamned story in here? At what point will it start to push other things out of the way?"
     
     func giveMeTheRightText() {
         for userActivity in viewModel.assignedUserActivities {
@@ -27,7 +27,7 @@ struct PrimaryView: View {
                 primaryViewActivityPrompt = userActivity.prompt
             } else {
                 primaryViewActivityName = "This is where we'll tell you what to do!"
-                primaryViewActivityPrompt = "..."
+                primaryViewActivityPrompt = "(You can close the app and we'll remind you later.)"
             }
         }
     }
@@ -65,7 +65,6 @@ struct PrimaryView: View {
                             .offset(x: 25)
                     }
                     .padding(100)
-                    
                 }
                 .offset(y: -100)
                 // Here's what needs to happen with this text: on first view tell the user that when their first notification comes there will be a prompt here to do something.
@@ -76,35 +75,38 @@ struct PrimaryView: View {
                 // the array can be sorted by score to return the most popular activities for the user
                 
         
-        Group {
+//        Group {
                     Text("\(primaryViewActivityName)")
-                        .font(.system(size: 50))
-                        .frame(width: 300)
+                .font(.system(size: 40, weight: .bold))
+                        .frame(width: 300, height: 150)
 //                        .padding(16)
-                            .frame(
-                                minWidth: 0,
-                                maxWidth: .infinity,
-                                minHeight: 0,
-                                maxHeight: .infinity,
-                                alignment: .top
-                            )
-                            .fixedSize(horizontal: false, vertical: true)
+//                            .frame(
+//                                minWidth: 0,
+//                                maxWidth: .infinity,
+//                                minHeight: 0,
+//                                maxHeight: 300,
+//                                alignment: .top
+//                            )
+                            .fixedSize(horizontal: true, vertical: true)
+                            .position(x: 200, y: -100)
                     
                     Text("\(primaryViewActivityPrompt)")
-                        .font(.largeTitle)
-                        .frame(width: 300)
-//                        .padding(16)
+                        .font(.title3)
+//                        .frame(width: 300)
+                        .padding(20)
                             .frame(
                                 minWidth: 0,
                                 maxWidth: .infinity,
                                 minHeight: 0,
                                 maxHeight: .infinity,
-                                alignment: .top
+                                alignment: .topLeading
                             )
                             .fixedSize(horizontal: false, vertical: true)
-        }
+                            .position(x: 200, y: -75)
+                            
+//        }
         
-        .offset(y: -100)
+//        .offset(y: -175)
                 Group{
                     // Doesn't do anything yet.
                     Button("Give me something else.") {
