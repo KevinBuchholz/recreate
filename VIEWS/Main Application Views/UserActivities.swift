@@ -18,8 +18,8 @@ struct UserActivities: View {
             activity in
             Text(activity.name)
         }
-        Button("Print User Activities") {
-            print("\(viewModel.userActivities)")
+        Button("Print Assigned User Activities") {
+            print("\(viewModel.assignedUserActivities)")
         }
     }
 }

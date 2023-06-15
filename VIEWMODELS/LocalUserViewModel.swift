@@ -18,7 +18,6 @@ import Foundation
         do {
             let data = try Data(contentsOf: savePath)
             firstLaunchOfApp = try JSONDecoder().decode(Bool.self, from: data)
-            //need a function that compares current date with activity date and if current date is > activity date, shows activity text
             
         } catch {
             firstLaunchOfApp = true
@@ -34,6 +33,32 @@ import Foundation
         }
     }
     
+    func saveUserActivites() {
+        DirectoryService.writeModelToDisk(assignedUserActivities)
+        print(assignedUserActivities)
+    }
+    
+    func loadUserActivities() {
+        assignedUserActivities = DirectoryService.readModelFromDisk()
+        print("activities loaded")
+    }
+    
+    
+    func saveArrayToStorage(array: [UserActivity]) {
+        UserDefaults.standard.set(array, forKey: "assignedUserActivities")
+    }
+
+    func loadArrayFromStorage() -> [UserActivity]? {
+        return UserDefaults.standard.array(forKey: "assignedUserActivities") as? [UserActivity]
+    }
+    
+//    let encoder = JSONEncoder()
+//if let encoded = try? encoder.encode(UserActivity(activity: Activity, date: Date)) {
+//    let defaults = UserDefaults.standard
+//    defaults.set(encoded, forKey: "SavedUserActivity")
+//}
+    
+    
     //    struct UserPreferences : Decodable, Encodable {
     //        var firstLaunchOfApp : Bool
     //        var localUserTimeLine = [Date]()
@@ -46,8 +71,8 @@ import Foundation
     //    }
     
     
-//    var primaryViewActivityName : String = "default"
-//    var primaryViewActivityPrompt : String = "default"
+//    var primaryViewActivityName : String = "flush"
+//    var primaryViewActivityPrompt : String = "cory"
     @Published var firstLaunchOfApp : Bool
     @Published var userActivities : [Activity] = []
     @Published var assignedUserActivities: [UserActivity] = []
@@ -89,6 +114,7 @@ import Foundation
         //filter through [userEnergy] and create a userActivities array that matches all the user's preferences.
         for activity in userEnergy {
             if activity.stimulating == "true" && stimulating == true || activity.relaxing == "true" && relaxing == true {
+//                saveUserActivity()
                 userActivities.append(activity)
             }
         }
@@ -202,6 +228,8 @@ import Foundation
         try await UNUserNotificationCenter.current().add(request)
         
         assignedUserActivities.append(UserActivity(activity: randomActivity, date: date))
+        saveUserActivites()
+//        saveArrayToStorage(array: userActivities)
     }
     
     func cancelNotifications() {

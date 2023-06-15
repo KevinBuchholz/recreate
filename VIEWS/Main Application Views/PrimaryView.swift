@@ -10,18 +10,24 @@ import SwiftUI
 struct PrimaryView: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
-
-    @State var primaryViewActivityName = "This is where we'll tell you what to do!"
+    @Environment(\.scenePhase) var scenePhase: ScenePhase
+    @State var primaryViewActivityName = "This is where we'll tell you what to do!" {
+        didSet {
+            print(primaryViewActivityName)
+        }
+    }
     @State var primaryViewActivityPrompt = ""
     
     func giveMeTheRightText() {
         for userActivity in viewModel.assignedUserActivities {
-            if Date.now > userActivity.date  {
+            if Date.now >= userActivity.date  {
+                print(Date.now)
+                print(userActivity.date)
                 primaryViewActivityName = userActivity.name
                 primaryViewActivityPrompt = userActivity.prompt
             } else {
                 primaryViewActivityName = "This is where we'll tell you what to do!"
-                primaryViewActivityPrompt = ""
+                primaryViewActivityPrompt = "..."
             }
         }
     }
@@ -132,7 +138,23 @@ struct PrimaryView: View {
             }
         }
         .onAppear {
-            giveMeTheRightText()
+            //Load [assignedUserActivites] from disk
+//            if case viewModel.assignedUserActivities = viewModel.loadArrayFromStorage() {
+//                giveMeTheRightText()
+//            } else {
+//                print("Failed to load array.")
+//            }
+            viewModel.loadUserActivities()
+            for _ in viewModel.assignedUserActivities {
+                giveMeTheRightText()
+            }
+            
+        }
+    
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                giveMeTheRightText()
+            }
         }
     }
 }

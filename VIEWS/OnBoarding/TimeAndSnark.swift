@@ -14,6 +14,7 @@ struct TimeAndSnark: View {
     //@StateObject var InterruptorModel = NotificationManager()
     @State private var setInterruptor : Date = Date()
 //    @State var hours : Int = 1
+ 
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -63,6 +64,7 @@ struct TimeAndSnark: View {
                             do {
                                 try await viewModel.scheduleCustomNotification(date: setInterruptor)
                                 viewModel.localUserTimeLine.append(setInterruptor)
+                                
                             } catch {
                                 print(error.localizedDescription)
                             }

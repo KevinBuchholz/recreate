@@ -20,14 +20,14 @@ enum BoatFloaters : String, CaseIterable, Identifiable, Codable, Hashable {
     case relaxing = "Relaxing"
 }
 
-enum Environment: String, CaseIterable, Identifiable, Codable {
-    
-    var id: String {
-        self.rawValue
-    }
-    case outside = "Outside"
-    case inside = "Inside"
-}
+//enum Environment: String, CaseIterable, Identifiable, Codable {
+//    
+//    var id: String {
+//        self.rawValue
+//    }
+//    case outside = "Outside"
+//    case inside = "Inside"
+//}
 
 enum Energy: String, CaseIterable, Identifiable, Codable {
     
