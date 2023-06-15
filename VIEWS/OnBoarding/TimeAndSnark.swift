@@ -40,16 +40,24 @@ struct TimeAndSnark: View {
 //                .padding()
 //                .pickerStyle(.wheel)
                 
+                Text("When do you waste time on social media?")
+                    .padding(5)
+                    .font(.largeTitle)
+                    .fontWeight(.medium)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 350)
+                     
                 Text("Set a time for a reminder to ditch mindless scrolling and embrace productive tasks!")
 //                    .padding()
-                    .font(.title3)
+                    .font(.title)
                     .multilineTextAlignment(.center)
                     .frame(width: 350)
                 
-                Text("(Choose at least one time.)")
-//                    .padding()
+                Text("(Let's start small and pick one time.)")
+                    .padding(5)
+                    .font(.title3)
                 
-                DatePicker("Choose at least one time:", selection: $setInterruptor, displayedComponents: .hourAndMinute)
+                DatePicker("Choose at one time:", selection: $setInterruptor, displayedComponents: .hourAndMinute)
 //                    .padding()
                     .datePickerStyle(.wheel)
                     .labelsHidden()
@@ -59,16 +67,18 @@ struct TimeAndSnark: View {
                     if viewModel.authorizedNotifications == false {
                         viewModel.requestAuthorization(date: setInterruptor)
                         viewModel.localUserTimeLine.append(setInterruptor)
+                        viewModel.saveUserActivites()
                     }else {
-                        Task {
-                            do {
-                                try await viewModel.scheduleCustomNotification(date: setInterruptor)
-                                viewModel.localUserTimeLine.append(setInterruptor)
-                                
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                        }
+//                        Task {
+//                            do {
+////THIS WILL BE REIMPLEMENTED WHEN I FIGURE OUT HOW TO HAVE MORE THAN ONE NOTIFICATION THAT WORKS.
+//                                try await viewModel.scheduleCustomNotification(date: setInterruptor)
+//                                viewModel.localUserTimeLine.append(setInterruptor)
+//
+//                            } catch {
+//                                print(error.localizedDescription)
+//                            }
+//                        }
                     }
                 }
                 .buttonStyle(.borderedProminent)
@@ -82,16 +92,29 @@ struct TimeAndSnark: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .multilineTextAlignment(.center)
                     .frame(width: 300, height: 50, alignment: .center)
-                    .font(.title2)
+                    .font(.title)
                     .foregroundColor(.white)
                     .background(Color.orange)
                     .containerShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
                     .simultaneousGesture(TapGesture().onEnded{
+//                        if viewModel.authorizedNotifications == false {
+//                            viewModel.requestAuthorization(date: setInterruptor)
+//                            viewModel.localUserTimeLine.append(setInterruptor)
+//                        }else {
+//                            Task {
+//                                do {
+//                                    try await viewModel.scheduleCustomNotification(date: setInterruptor)
+//                                    viewModel.localUserTimeLine.append(setInterruptor)
+//
+//                                } catch {
+//                                    print(error.localizedDescription)
+//                                }
+//                            }
+//                        }
                         viewModel.firstLaunchOfApp.toggle()
                         viewModel.save()
-//                        viewModel.assignUserActivity()
-//                        print("\(hours)")
+
                     })
                     .padding()
             }
