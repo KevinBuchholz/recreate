@@ -158,7 +158,7 @@ import Foundation
     //extension NotificationManager {
     //    static let instance = NotificationManager()
     var authorizedNotifications = false
-    let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+    let options: UNAuthorizationOptions = [.alert, .sound] // .badge needs to be added back in
     func requestAuthorization(date: Date) {
         UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
             if let error = error {
@@ -208,7 +208,7 @@ import Foundation
         content.title = randomActivity.interruptorTitle
         content.subtitle = randomActivity.interruptorSubTitle
         content.sound = .default
-        content.badge = 1
+//        content.badge = 1
         //Debugging print statements- comment out before test flight.
         
         print(randomActivity.interruptorTitle)
