@@ -18,8 +18,6 @@ import Foundation
         do {
             let data = try Data(contentsOf: savePath)
             firstLaunchOfApp = try JSONDecoder().decode(Bool.self, from: data)
-            loadUserActivities()
-            //need a function that compares current date with activity date and if current date is > activity date, shows activity text
             
         } catch {
             firstLaunchOfApp = true
@@ -36,11 +34,13 @@ import Foundation
     }
     
     func saveUserActivites() {
-        DirectoryService.writeModelToDisk(userActivities)
+        DirectoryService.writeModelToDisk(assignedUserActivities)
+        print(assignedUserActivities)
     }
     
     func loadUserActivities() {
-        userActivities = DirectoryService.readModelFromDisk()
+        assignedUserActivities = DirectoryService.readModelFromDisk()
+        print("activities loaded")
     }
     
     
