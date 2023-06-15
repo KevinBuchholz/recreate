@@ -217,7 +217,7 @@ import Foundation
         print(randomActivity.prompt)
         
         
-        let dateComponents = Calendar.current.dateComponents([.hour, .minute, .timeZone], from: date)
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute, .second, .timeZone], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         
