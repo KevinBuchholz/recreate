@@ -205,8 +205,8 @@ import Foundation
         let randomActivity = userActivities.randomElement()!
         
         let content = UNMutableNotificationContent()
-        content.title = randomActivity.interruptorTitle
-        content.subtitle = randomActivity.interruptorSubTitle
+        content.title = randomActivity.name
+        content.subtitle = randomActivity.interruptorTitle
         content.sound = .default
 //        content.badge = 1
         //Debugging print statements- comment out before test flight.
