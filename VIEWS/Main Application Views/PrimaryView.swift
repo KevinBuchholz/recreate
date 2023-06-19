@@ -11,12 +11,12 @@ struct PrimaryView: View {
     
     @EnvironmentObject var viewModel : LocalUserViewModel
     @Environment(\.scenePhase) var scenePhase: ScenePhase
-    @State var primaryViewActivityName = "Go Skateboarding" {
+    @State var primaryViewActivityName = "Primary View Activity Name" {
         didSet {
             print(primaryViewActivityName)
         }
     }
-    @State var primaryViewActivityPrompt = "Tony Hawk still skates at 55, what's your excuse? How much can I fit in here without fucking up my UI. This seems like quite a lot!!! Can I write a whole goddamned story in here? At what point will it start to push other things out of the way?"
+    @State var primaryViewActivityPrompt = "Primary View Activity Prompt"
     
     func giveMeTheRightText() {
         for userActivity in viewModel.assignedUserActivities {
@@ -95,7 +95,7 @@ struct PrimaryView: View {
 //                        .frame(width: 300)
                         .padding(20)
                             .frame(
-                                minWidth: 0,
+                                minWidth: 300,
                                 maxWidth: .infinity,
                                 minHeight: 0,
                                 maxHeight: .infinity,
@@ -103,6 +103,7 @@ struct PrimaryView: View {
                             )
                             .fixedSize(horizontal: false, vertical: true)
                             .position(x: 200, y: -75)
+                            .padding()
                             
 //        }
         
