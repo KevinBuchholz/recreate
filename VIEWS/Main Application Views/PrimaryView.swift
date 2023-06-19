@@ -17,17 +17,18 @@ struct PrimaryView: View {
         }
     }
     @State var primaryViewActivityPrompt = "Primary View Activity Prompt"
+    @State var primaryViewInterruptorSubTitle = "Primary View Interruptor SubTitle"
     
     func giveMeTheRightText() {
         for userActivity in viewModel.assignedUserActivities {
             if Date.now >= userActivity.date  {
                 print(Date.now)
                 print(userActivity.date)
-                primaryViewActivityName = userActivity.name
                 primaryViewActivityPrompt = userActivity.prompt
+                primaryViewInterruptorSubTitle = userActivity.activity.interruptorSubTitle
             } else {
-                primaryViewActivityName = "This is where we'll tell you what to do!"
-                primaryViewActivityPrompt = "(You can close the app and we'll remind you later.)"
+                primaryViewActivityPrompt = "This is where we'll tell you what to do!"
+                primaryViewInterruptorSubTitle = "(You can close the app and we'll send you a reminder later.)"
             }
         }
     }
@@ -76,7 +77,7 @@ struct PrimaryView: View {
                 
         
 //        Group {
-                    Text("\(primaryViewActivityName)")
+                    Text("\(primaryViewActivityPrompt)")
                 .font(.system(size: 40, weight: .bold))
                         .frame(width: 300, height: 150)
 //                        .padding(16)
@@ -90,8 +91,8 @@ struct PrimaryView: View {
                             .fixedSize(horizontal: true, vertical: true)
                             .position(x: 200, y: -100)
                     
-                    Text("\(primaryViewActivityPrompt)")
-                        .font(.title3)
+                    Text("\(primaryViewInterruptorSubTitle)")
+                        .font(.title2)
 //                        .frame(width: 300)
                         .padding(20)
                             .frame(
@@ -99,10 +100,10 @@ struct PrimaryView: View {
                                 maxWidth: .infinity,
                                 minHeight: 0,
                                 maxHeight: .infinity,
-                                alignment: .topLeading
+                                alignment: .center
                             )
                             .fixedSize(horizontal: false, vertical: true)
-                            .position(x: 200, y: -75)
+                            .position(x: 175, y: -75)
                             .padding()
                             
 //        }
